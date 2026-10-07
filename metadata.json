@@ -1,0 +1,6 @@
+{
+  "name": "אוזן מוזיקלית - אימון שמיעה לפסנתר",
+  "description": "אתר לפיתוח שמיעה מוזיקלית וזיהוי תווים באוקטבה C4–B4 עם מקלדת פסנתר אינטראקטיבית",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,47 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile with password hash, stage progression, and optional teacher feedback notes",
+      "type": "object",
+      "properties": {
+        "username": {
+          "type": "string",
+          "description": "Username identifier",
+          "maxLength": 64
+        },
+        "displayName": {
+          "type": "string",
+          "description": "Display username"
+        },
+        "passwordHash": {
+          "type": "string",
+          "description": "SHA-256 hashed password"
+        },
+        "progress": {
+          "type": "object",
+          "description": "Progress mapping for all ear training stages"
+        },
+        "adminNote": {
+          "type": "string",
+          "description": "Teacher/admin feedback note for student"
+        },
+        "adminNoteDate": {
+          "type": "string",
+          "description": "Timestamp of admin note"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Last update timestamp"
+        }
+      },
+      "required": ["username", "passwordHash", "progress"]
+    }
+  },
+  "firestore": {
+    "/users/{username}": {
+      "schema": "UserProfile",
+      "description": "User profile and persistent ear training progress document"
+    }
+  }
+}

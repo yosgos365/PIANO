@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Assistant', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Piano Key realistic aesthetics */
+.piano-white-key {
+  background: linear-gradient(180deg, #fdfdfd 0%, #f4f4f5 85%, #e4e4e7 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 
+              0 4px 6px -1px rgba(0, 0, 0, 0.25), 
+              0 2px 4px -2px rgba(0, 0, 0, 0.1),
+              inset 0 -4px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.05s ease, background 0.1s ease, box-shadow 0.05s ease;
+}
+
+.piano-white-key:hover {
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 85%, #ededf0 100%);
+}
+
+.piano-white-key:active,
+.piano-white-key.is-pressed {
+  transform: translateY(3px) scaleY(0.99);
+  background: linear-gradient(180deg, #f4f4f5 0%, #e4e4e7 85%, #d4d4d8 100%);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2), 
+              0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.piano-black-key {
+  background: linear-gradient(180deg, #27272a 0%, #18181b 60%, #09090b 100%);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 
+              0 6px 10px rgba(0, 0, 0, 0.6), 
+              0 2px 3px rgba(0, 0, 0, 0.4);
+  transition: transform 0.05s ease, background 0.1s ease, box-shadow 0.05s ease;
+}
+
+.piano-black-key:hover {
+  background: linear-gradient(180deg, #3f3f46 0%, #27272a 60%, #18181b 100%);
+}
+
+.piano-black-key:active,
+.piano-black-key.is-pressed {
+  transform: translateY(3px) scaleY(0.98);
+  background: linear-gradient(180deg, #18181b 0%, #09090b 80%, #000000 100%);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.6), 
+              0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Sound wave pulse animation */
+@keyframes soundwave {
+  0%, 100% {
+    height: 4px;
+    opacity: 0.3;
+  }
+  50% {
+    height: 24px;
+    opacity: 1;
+  }
+}
+
+.wave-bar {
+  animation: soundwave 0.8s ease-in-out infinite;
+}
